@@ -2,6 +2,11 @@
 
 Explore the world of container orchestration using Kubernetes. This project guides you through the deployment of a fully functional Kubernetes cluster and the setup of an e-commerce site, covering essential components and configurations.
 
+# The Architecture in the Cloud
+
+![Kube-sami drawio](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/708c05eb-f501-42e9-a6b9-6ec05ab9a8e6)
+
+
 ## Key Components:
 
 1. **Networking and Virtual Machines:**
