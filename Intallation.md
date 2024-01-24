@@ -60,4 +60,19 @@ This section outlines the necessary steps to configure networking components, de
    - Networks: internet, kube-public
    - Security Groups - Security Group 1
 
-Note: The [main.tf](https://github.com/samishafique786/container-orch-w-k8s/blob/main/terraform/main.tf) file has all the Infrastructure as Code (IaC) via Terraform.  
+Note: The [main.tf](https://github.com/samishafique786/container-orch-w-k8s/blob/main/terraform/main.tf) file has all the Infrastructure as Code (IaC) that you can use to deploy.
+
+# Persistent Storage & Docker Installing 
+
+## Persistent Storage 
+
+The are many ways to do so, it depends on the cloud provider you are using. In my case, I am using the **CSC cloud** provider in Finland. 
+
+
+
+## Docker
+
+After your virtual machines are up and running, the first thing you need to do is to install docker on all of them, because we will be running NGINX, Pacman, and the OpenCard application as a docker container. You can either do that by SSHing into the VMs, or you can use a 'playbook' if you have Ansible installed and configured.
+
+
+
