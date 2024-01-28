@@ -68,6 +68,8 @@ Note: The [main.tf](https://github.com/samishafique786/container-orch-w-k8s/blob
 
 The are many ways to do so, it depends on the cloud provider you are using. In my case, I am using the **CSC cloud** provider in Finland. 
 
+First, create a persistant volume (in my case 50 GB), and attach it to the VM (load-balancer), as we will be running the load-balancer VM as a "Load Balancer" and "NFS Server."
+
 
 
 ## Docker
