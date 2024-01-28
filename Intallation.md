@@ -111,3 +111,5 @@ Now that you've installed Rancher, access the Rancher web UI in your browser, an
 
 # Creating a Custom Kubernetes Cluster
 
+After you are on the Homepage of the Rancher Web UI, click on **☰ > Cluster Management** ![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/1d180bf5-e724-45b0-b9c1-c7c5f703536e), and then, on the **Clusters** page, click on **Create**. on the right-side corner.
+
