@@ -74,5 +74,17 @@ The are many ways to do so, it depends on the cloud provider you are using. In m
 
 After your virtual machines are up and running, the first thing you need to do is to install docker on all of them, because we will be running NGINX, Pacman, and the OpenCard application as a docker container. You can either do that by SSHing into the VMs, or you can use a 'playbook' if you have Ansible installed and configured.
 
+```bash
+sudo apt update
+sudo apt install docker.io
+sudo systemctl status docker
+```
+After you confirm that Docker is up and running, you need to add your current Ubuntu user to the docker group.
 
+```bash
+ sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+
+Repeat these steps on all the 4 VMs. 
 
