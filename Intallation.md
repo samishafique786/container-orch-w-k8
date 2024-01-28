@@ -106,3 +106,8 @@ After you run this command on the rancher-server VM, you will see that you are r
 run the command, ``` docker ps ``` and see if you get the following output:
 
 ![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/37e72aa1-dbc6-4061-8a5d-542d982eb3a6)
+
+Now that you've installed Rancher, access the Rancher web UI in your browser, and check the bootstrap password. Note: It is recommended that you use a long, specific password. After you've installed Rancher, it is time to create your own **custom Kubernetes cluster**.
+
+# Creating a Custom Kubernetes Cluster
+
