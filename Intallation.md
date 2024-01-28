@@ -113,7 +113,7 @@ Now that you've installed Rancher, access the Rancher web UI in your browser, an
 
 ![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/1d180bf5-e724-45b0-b9c1-c7c5f703536e)
 
-After you are on the Homepage of the Rancher Web UI, click on **☰ > Cluster Management** , and then, on the **Clusters** page, click on **Create**. on the right-side corner. Create a **Custom** k8s cluster, and then, you will taken into the **registeration** page define the nodes. (kube-master is the master node, while, kube-worker-a is the worker node)
+After you are on the Homepage of the Rancher Web UI, click on **☰ > Cluster Management**, and then, on the **Clusters** page, click on **Create**. on the right-side corner. Create a **Custom** k8s cluster, and then, you will taken to the **registration** page to define the nodes. (kube-master is the master node, while, kube-worker-a is the worker node)
 
 ## Node Registration: Step 1
 
@@ -122,7 +122,7 @@ the first node will be the master node, (kube-master), and you will make sure th
 
 ## Step 2
 
-After that, click on **show advanced**, this is where you name the node, and write the VMs kube-public and kube-private network address. 
+After that, click on **show advanced**, this is where you name the node, and write the VM's kube-public and kube-private network addresses. 
 
 ## Step 3 
 
@@ -132,3 +132,9 @@ After you write the network address, click on Insecure TLS certification since w
 
 This is will create a command that you run on the kube-master node, (since you are registering the kube-master node). So, copy that command that's been generated, SSH into the kube-master VM, and run the command to finally register the node to the custom k8s cluster you just created. 
 
+Now, do the same for the kube-worker-a VM that will be registered as a worker node. So, on the same registration page, uncheck the etcd and control plane buttons, name your worker node, write the public and private adresses of your worker node, again, check the insecure TLS button. The command to register the worker node will be created.
+
+![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/9e38311f-1488-4791-838e-9d49de85a7a9)
+
+
+SSH into the kube-worker-a VM, and run the copied command to finally register the worker node in your k8s cluster.
