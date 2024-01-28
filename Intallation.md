@@ -109,9 +109,26 @@ run the command, ``` docker ps ``` and see if you get the following output:
 
 Now that you've installed Rancher, access the Rancher web UI in your browser, and check the bootstrap password. Note: It is recommended that you use a long, specific password. After you've installed Rancher, it is time to create your own **custom Kubernetes cluster**.
 
-# Creating a Custom Kubernetes Cluster
+# Creating a Custom Kubernetes Cluster and Registering Nodes
 
 ![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/1d180bf5-e724-45b0-b9c1-c7c5f703536e)
 
-After you are on the Homepage of the Rancher Web UI, click on **☰ > Cluster Management** , and then, on the **Clusters** page, click on **Create**. on the right-side corner.
+After you are on the Homepage of the Rancher Web UI, click on **☰ > Cluster Management** , and then, on the **Clusters** page, click on **Create**. on the right-side corner. Create a **Custom** k8s cluster, and then, you will taken into the **registeration** page define the nodes. (kube-master is the master node, while, kube-worker-a is the worker node)
+
+## Node Registration: Step 1
+
+![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/3bdfdf53-ff8a-4a78-96f4-a3dffaa31102)
+the first node will be the master node, (kube-master), and you will make sure that that etcd, control plane, and worker are checked. (meaning this is the master node).
+
+## Step 2
+
+After that, click on **show advanced**, this is where you name the node, and write the VMs kube-public and kube-private network address. 
+
+## Step 3 
+
+After you write the network address, click on Insecure TLS certification since we are using a self-signed SSL.
+
+![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/6b56110f-3d01-4a06-a9e5-5e67cbc6a314)
+
+This is will create a command that you run on the kube-master node, (since you are registering the kube-master node). So, copy that command that's been generated, SSH into the kube-master VM, and run the command to finally register the node to the custom k8s cluster you just created. 
 
