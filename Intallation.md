@@ -84,9 +84,25 @@ sudo systemctl status docker
 After you confirm that Docker is up and running, you need to add your current Ubuntu user to the docker group.
 
 ```bash
- sudo groupadd docker
+sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
-Repeat these steps on all the 4 VMs. 
+Repeat these steps on all the 4 VMs.
 
+# Install Rancher UI on the VM: rancher-server
+
+Well, Since we installed docker on all the VMs, you may have guessed that we will be running Rancher as a Docker container. SSH into the rancher-server VM, and run the following command to bind port 443 for rancher.
+
+```bash
+docker run -d --restart=unless-stopped \
+  -p 443:443 \
+  --privileged \
+  rancher/rancher:latest
+```
+
+After you run this command on the rancher-server VM, you will see that you are running Rancher on the port 443.
+
+run the command, ```bash docker ps ``` and see if you get the following output:
+
+![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/37e72aa1-dbc6-4061-8a5d-542d982eb3a6)
