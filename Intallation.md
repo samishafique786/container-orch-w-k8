@@ -103,6 +103,6 @@ docker run -d --restart=unless-stopped \
 
 After you run this command on the rancher-server VM, you will see that you are running Rancher on the port 443.
 
-run the command, ```bash docker ps ``` and see if you get the following output:
+run the command, ``` docker ps ``` and see if you get the following output:
 
 ![image](https://github.com/samishafique786/container-orch-w-k8s/assets/108603607/37e72aa1-dbc6-4061-8a5d-542d982eb3a6)
