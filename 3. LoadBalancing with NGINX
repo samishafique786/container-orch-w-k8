@@ -1,1 +1,36 @@
+# Nginx Load Balancer and Kubernetes Ingress Setup
 
+## Nginx Load Balancer
+
+Nginx load balancer forwards incoming HTTP connections to your web services within the Kubernetes cluster. It utilizes a single public IP address and domain names configured on the DNS server to route traffic to different services.
+
+### Configuration
+
+1. Create the Nginx configuration file at `/etc/nginx.conf`.
+2. Configure the Nginx worker processes and events.
+3. Define the upstream servers using the `stream` block.
+4. Specify the servers' IP addresses and ports.
+5. Configure the load balancer settings like `least_conn`, `max_fails`, and `fail_timeout`.
+6. Create a server block to listen on port 80 and proxy_pass traffic to the defined upstream servers.
+
+Example configuration:
+```nginx
+worker_processes 4;
+worker_rlimit_nofile 40000;
+
+events {
+    worker_connections 8192;
+}
+
+stream {
+    upstream rancher_servers_http {
+        least_conn;
+        server <IP_NODE_1>:80 max_fails=3 fail_timeout=5s;
+        server <IP_NODE_2>:80 max_fails=3 fail_timeout=5s;
+    }
+
+    server {
+        listen 80;
+        proxy_pass rancher_servers_http;
+    }
+}
